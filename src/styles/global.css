@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'SF_Pro';
+  src: url('../fonts/SF-Pro-Text-Regular.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik-VariableFont_wght.otf') format('otf');
+}
+
+:root {
+  --c_principal: #eeba2c;
+
+  --c_yellow_01: #be9423;
+  --c_yellow_02: #775d16;
+
+  --c_red_01: #ba0000;
+
+  --c_black_01: #161616;
+  --c_black_02: #212121;
+  --c_black_03: #262626;
+
+  --cf_black: #000000;
+  --cf_white: #ffffff;
+
+}
+
+* {
+  font-family: SF_Pro;
+  user-select: none;
+}
+
+body {
+  background: var(--c_black_02);
+}
+
+.font-sfFont {
+  font-family: SF_Pro;
+}
+.font-rFont {
+  font-family: Rubik;
+}
