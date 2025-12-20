@@ -1,0 +1,21 @@
+---
+export const IconMap = {
+  Home:         'icon-[mdi--home]',
+  AboutMe:      'icon-[ix--about-filled]',
+  Education:    'icon-[mdi--school]',
+  Projects:     'icon-[ix--project]',
+  Achievements: 'icon-[grommet-icons--achievement]',
+  Experience:   'icon-[material-symbols--work]',
+  Contact:      'icon-[bxs--contact]',
+
+  Language:   'icon-[material-symbols--language]',
+}
+
+interface Props {
+  iconCode: keyof typeof IconMap;
+}
+
+const { iconCode } = Astro.props as Props;
+---
+
+<span class={IconMap[iconCode]}/>

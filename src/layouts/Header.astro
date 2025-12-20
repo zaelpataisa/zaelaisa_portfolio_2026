@@ -1,0 +1,84 @@
+---
+import HeaderButtons from "../Components/HeaderButtons.astro"
+import LanguagePicker from "../Components/LanguagePicker.astro"
+
+import { $dict } from '../store/languageStore.ts'
+
+const dict = $dict.get();
+
+const currentPath = Astro.url.pathname;
+let currentPageTitleKey = '';
+
+if (currentPath === '/') {
+  currentPageTitleKey = 'title_index';
+} else {
+  const pathSegment = currentPath.substring(1);
+  currentPageTitleKey = `title_${pathSegment}`;
+}
+
+const currentPageTitle = dict[currentPageTitleKey as keyof typeof dict] || 'Unknown Page';
+---
+
+<header class="flex flex-row w-dvw min-h-16">
+  <!-- Sección izquierda -->
+  <div class="flex justify-center items-center w-[50%] p-2">
+    <div class="flex flex-row justify-between items-center min-w-[50%] py-2 px-10 border-2 border-(--c_principal) rounded-2xl space-x-2">
+      <p class="font-roFont font-bold text-[1.25rem] text-(--cf_white)">
+        <!-- TO-DO: Que cambie entre Elías Zapata / Zael Aisa -->
+        Elías Zapata 
+      </p>
+      <p class="font-roFont font-bold text-[1.25rem] text-(--c_principal)">
+        {currentPageTitle}
+      </p>
+    </div>
+  </div>
+
+  <!-- Sección derecha -->
+  <div class="flex items-center justify-end w-[50%] p-2">
+    <div class="flex flex-row items-center space-x-2">
+      <HeaderButtons 
+        i18nKey="title_index" 
+        title={dict.title_index} 
+        icon="Home"
+        url="/" 
+      />
+      <HeaderButtons 
+        i18nKey="title_aboutMe" 
+        title={dict.title_aboutMe} 
+        icon="AboutMe"
+        url="/aboutMe" 
+      />
+      <HeaderButtons 
+        i18nKey="title_education" 
+        title={dict.title_education} 
+        icon="Education"
+        url="/education" 
+      />
+      <HeaderButtons 
+        i18nKey="title_projects" 
+        title={dict.title_projects} 
+        icon="Projects"
+        url="/projects" 
+      />
+      <HeaderButtons 
+        i18nKey="title_achievements" 
+        title={dict.title_achievements} 
+        icon="Achievements"
+        url="/achievements" 
+      />
+      <HeaderButtons 
+        i18nKey="title_experience" 
+        title={dict.title_experience} 
+        icon="Experience"
+        url="/experience" 
+      />
+      <HeaderButtons 
+        i18nKey="title_contact" 
+        title={dict.title_contact} 
+        icon="Contact"
+        url="/contact" 
+      />
+      <LanguagePicker />
+    </div>
+  </div>
+</header>

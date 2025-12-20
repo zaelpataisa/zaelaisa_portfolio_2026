@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import 'tailwindcss';
+@plugin "@iconify/tailwind4";
 
 @font-face {
   font-family: 'SF_Pro';
@@ -7,7 +9,12 @@
 
 @font-face {
   font-family: 'Rubik';
-  src: url('../fonts/Rubik-VariableFont_wght.otf') format('otf');
+  src: url('../fonts/Rubik-VariableFont_wght.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf') format('ttf');
 }
 
 :root {
@@ -27,13 +34,12 @@
 
 }
 
-* {
-  font-family: SF_Pro;
+/* * {
   user-select: none;
-}
+} */
 
 body {
-  background: var(--c_black_02);
+  background: var(--c_black_01);
 }
 
 .font-sfFont {
@@ -41,4 +47,7 @@ body {
 }
 .font-rFont {
   font-family: Rubik;
+}
+.font-roFont {
+  font-family: Roboto;
 }
