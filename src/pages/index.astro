@@ -1,4 +1,5 @@
 ---
+import Icons from "../Components/Icons.astro";
 import Header from "../layouts/Header.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -9,11 +10,48 @@ const dict = $dict.get();
 <Layout>
 	<Header />
 	<div class="flex w-dvw">
-		<div class="flex w-[50%] bg-yellow-200">
-			a
+		<!-- Sección izquierda -->
+		<div class="flex flex-col w-[50%] p-20 justify-center items-start">
+			<p class="font-bold text-[3rem] text-(--c_principal)">
+        <!-- TO-DO: Que cambie entre Elías Zapata / Zael Aisa -->
+				Elías Zapata
+			</p>
+			<p class="flex justify-center items-center text-[2rem] text-(--c_principal) space-x-2">
+				<Icons iconCode="MapPoint" />
+				<Icons iconCode="Venezuela" />
+				<span class="vzla-gradient" data-i18n="index_fromVzla">
+					{dict.index_fromVzla}
+				</span>
+			</p>
 		</div>
-		<div class="flex w-[50%] bg-green-200">
-			a
+
+		<!-- Sección derecha -->
+		<div class="flex flex-col p-15 w-[50%] items-start justify-between space-y-4">
+			<p class="flex justify-center items-center space-x-2 font-bold text-[1.75rem] text-(--c_principal)">
+				<Icons iconCode="Pin" />
+				<span data-i18n="index_rol01">
+					{dict.index_rol01}
+				</span>
+			</p>
+			<p class="flex justify-center items-center space-x-2 font-bold text-[1.75rem] text-(--c_principal)">
+				<Icons iconCode="Pin" />
+				<span data-i18n="index_rol02">
+					{dict.index_rol02}
+				</span>
+			</p>
+			<p class="flex justify-center items-center space-x-2 font-bold text-[1.75rem] text-(--c_principal)">
+				<Icons iconCode="Pin" />
+				<span data-i18n="index_rol03">
+					{dict.index_rol03}
+				</span>
+			</p>
 		</div>
+	</div>
+
+	<!--  -->
+	<div class="flex w-dvw">
+		<div class="flex w-full bg-green-200">
+			a
+		</div> 
 	</div>
 </Layout>

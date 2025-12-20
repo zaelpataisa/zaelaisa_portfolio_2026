@@ -9,9 +9,13 @@ export const languages = {
     title_projects:       "Proyectos",
     title_achievements:   "Destacados",
     title_experience:     "Experiencia laboral",
-    title_contact:         "Contacto",
+    title_contact:        "Contacto",
 
     // Index
+    index_fromVzla:       "¡Desde Venezuela!",
+    index_rol01:          "Desarrollador Web Fullstack",
+    index_rol02:          "Programador de Robótica",
+    index_rol03:          "Desarrollador XR",
   },
   en: {
     // Views titles
@@ -24,6 +28,10 @@ export const languages = {
     title_contact:        "Contact",
 
     // Index
+    index_fromVzla:       "From Venezuela!",
+    index_rol01:          "Fullstack Web Developer",
+    index_rol02:          "Robotics Software Engineer",
+    index_rol03:          "XR Developer",
   }
 }
 

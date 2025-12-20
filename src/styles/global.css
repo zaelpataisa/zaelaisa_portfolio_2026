@@ -40,6 +40,7 @@
 
 body {
   background: var(--c_black_01);
+  font-family: Roboto;
 }
 
 .font-sfFont {
@@ -50,4 +51,11 @@ body {
 }
 .font-roFont {
   font-family: Roboto;
+}
+
+.vzla-gradient {
+  background-image: linear-gradient(to right, #ffc107 0%, #003cff 50%, #ff0019 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
