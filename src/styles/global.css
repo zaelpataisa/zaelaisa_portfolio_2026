@@ -1,24 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
-@import 'tailwindcss';
 @plugin "@iconify/tailwind4";
 
-@font-face {
-  font-family: 'SF_Pro';
-  src: url('../fonts/SF-Pro-Text-Regular.otf') format('otf');
+@theme {
+  --font-mFont: "Montserrat", sans-serif;
+  --font-rFont: "Rubik", sans-serif;
+  --font-iFont: "Inconsolata", monospace;
 }
 
-@font-face {
-  font-family: 'Rubik';
-  src: url('../fonts/Rubik-VariableFont_wght.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Regular.ttf') format('ttf');
-}
-
-:root {
-  --c_principal: #eeba2c;
+:root {  
+ --c_principal: #eeba2c;
 
   --c_yellow_01: #be9423;
   --c_yellow_02: #775d16;
@@ -29,28 +20,23 @@
   --c_black_02: #212121;
   --c_black_03: #262626;
 
-  --cf_black: #000000;
-  --cf_white: #ffffff;
-
+  --c_black: #000000;
+  --c_white: #ffffff;
 }
-
-/* * {
-  user-select: none;
-} */
 
 body {
   background: var(--c_black_01);
-  font-family: Roboto;
+  color: var(--cf_white);
 }
 
-.font-sfFont {
-  font-family: SF_Pro;
+.font-mFont { 
+  font-family: var(--font-mFont);
 }
-.font-rFont {
-  font-family: Rubik;
+.font-rFont { 
+  font-family: var(--font-rFont);
 }
-.font-roFont {
-  font-family: Roboto;
+.font-iFont { 
+  font-family: var(--font-iFont);
 }
 
 .vzla-gradient {
@@ -58,4 +44,21 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.hr-custom {
+  width: 96%;
+  margin: 0 2% 1rem;
+  height: 1px;
+  border-radius: 75%;
+  background: linear-gradient(var(--gradient-wallpaper-o));
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; } 
+}
+
+.animate-blink {
+  animation: blink 1.5s infinite;
 }

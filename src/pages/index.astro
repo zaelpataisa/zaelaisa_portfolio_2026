@@ -1,57 +1,26 @@
 ---
-import Icons from "../Components/Icons.astro";
-import Header from "../layouts/Header.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro"
+import ContainerLeft from "../layouts/ContainerLeft.astro"
 
-import { $dict } from '../store/languageStore.ts'
-const dict = $dict.get();
+// Estilos
+const containerPrincipal  = "flex flex-row w-full min-h-dvh"
+const containerLeftStyle  = "flex flex-row justify-between w-[40%] min-h-full p-4"
+const containerRightSyle  = "flex w-[60%]"
+
 ---
 
+<!-- TO-DO: Buscar optimización a nivel de SEO -->
+
 <Layout>
-	<Header />
-	<div class="flex w-dvw">
-		<!-- Sección izquierda -->
-		<div class="flex flex-col w-[50%] p-20 justify-center items-start">
-			<p class="font-bold text-[3rem] text-(--c_principal)">
-        <!-- TO-DO: Que cambie entre Elías Zapata / Zael Aisa -->
-				Elías Zapata
-			</p>
-			<p class="flex justify-center items-center text-[2rem] text-(--c_principal) space-x-2">
-				<Icons iconCode="MapPoint" />
-				<Icons iconCode="Venezuela" />
-				<span class="vzla-gradient" data-i18n="index_fromVzla">
-					{dict.index_fromVzla}
-				</span>
-			</p>
-		</div>
+  <div class={containerPrincipal}>
+    <!-- Lado izquierdo -->
+    <div class={containerLeftStyle}>
+      <ContainerLeft />
+    </div>
 
-		<!-- Sección derecha -->
-		<div class="flex flex-col p-15 w-[50%] items-start justify-between space-y-4">
-			<p class="flex justify-center items-center space-x-2 font-bold text-[1.75rem] text-(--c_principal)">
-				<Icons iconCode="Pin" />
-				<span data-i18n="index_rol01">
-					{dict.index_rol01}
-				</span>
-			</p>
-			<p class="flex justify-center items-center space-x-2 font-bold text-[1.75rem] text-(--c_principal)">
-				<Icons iconCode="Pin" />
-				<span data-i18n="index_rol02">
-					{dict.index_rol02}
-				</span>
-			</p>
-			<p class="flex justify-center items-center space-x-2 font-bold text-[1.75rem] text-(--c_principal)">
-				<Icons iconCode="Pin" />
-				<span data-i18n="index_rol03">
-					{dict.index_rol03}
-				</span>
-			</p>
-		</div>
-	</div>
+    <!-- Lado derecho -->
+    <div class={containerRightSyle}>
 
-	<!--  -->
-	<div class="flex w-dvw">
-		<div class="flex w-full bg-green-200">
-			a
-		</div> 
-	</div>
+    </div>
+  </div>
 </Layout>

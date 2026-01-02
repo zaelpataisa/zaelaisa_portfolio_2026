@@ -3,37 +3,39 @@ import { atom, computed } from "nanostores";
 export const languages = {
   es: {
     // Títulos de página
-    title_index:          "¡Bienvenido!",
-    title_aboutMe:        "Sobre mí",
-    title_education:      "Educación",
-    title_projects:       "Proyectos",
-    title_achievements:   "Destacados",
-    title_experience:     "Experiencia laboral",
-    title_contact:        "Contacto",
+    cLeft_title01:        "Tecnologías",
+    cLeft_title02:        "Proyectos",
+    cLeft_title03:        "Experiencias",
+    cLeft_title04:        "Educación",
+    cLeft_title05:        "Cambiar idioma: Español",
 
-    // Index
-    index_fromVzla:       "¡Desde Venezuela!",
-    index_rol01:          "Desarrollador Web Fullstack",
-    index_rol02:          "Programador de Robótica",
-    index_rol03:          "Desarrollador XR",
+    cLeft_myTitle01:      "Desarrollador Web Backend",
+    cLeft_myTitle02:      "Programador en Robótica",
+    cLeft_myTitle03:      "Desarrollador XR",
+    cLeft_venezuela:      "¡De Venezuela para el mundo!",
   },
   en: {
     // Views titles
-    title_index:          "Welcome!",
-    title_aboutMe:        "About me",
-    title_education:      "Education",
-    title_projects:       "Projects",
-    title_achievements:   "Achievements",
-    title_experience:     "Experience",
-    title_contact:        "Contact",
+    cLeft_title01:        "Technologies",
+    cLeft_title02:        "Projects",
+    cLeft_title03:        "Experience",
+    cLeft_title04:        "Education",
+    cLeft_title05:        "Change Langauge: English",
 
-    // Index
-    index_fromVzla:       "From Venezuela!",
-    index_rol01:          "Fullstack Web Developer",
-    index_rol02:          "Robotics Software Engineer",
-    index_rol03:          "XR Developer",
+    cLeft_myTitle01:      "Backend Web Developer",
+    cLeft_myTitle02:      "Robotics Software Engineer",
+    cLeft_myTitle03:      "XR Developer",
+    cLeft_venezuela:      "From Venezuela to the World!",
   }
 }
+
+export const constLanguages = {
+  cLeft_name01:           "Elías Zapata",
+  cLeft_name02:           "Zael Aisa",
+}
+
+
+export type LanguageKey = keyof typeof languages.es;
 
 export const currentLang = atom<keyof typeof languages>('es');
 export const $dict = computed(currentLang, (lang) => languages[lang]);

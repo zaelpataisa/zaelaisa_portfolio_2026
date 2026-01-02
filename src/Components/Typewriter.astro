@@ -1,0 +1,87 @@
+---
+import { type LanguageKey } from "../store/languageStore";
+
+interface Props {
+  postKeys: LanguageKey[];
+  postSpeed?: number;
+  postDelay?: number;
+}
+
+const {
+  postKeys, 
+  postSpeed = 100, 
+  postDelay = 2000 
+} = Astro.props;
+---
+
+<div class="font-iFont text-[2.5rem] text-(--c_white) flex items-center">
+  <span class="text-(--c_principal)">{`> `}</span>
+  <span id="typewriter-text" class="ml-2"></span>
+  <span
+    id="typewriter-data"
+    data-post-keys={JSON.stringify(postKeys)}
+    data-post-speed={postSpeed}
+    data-post-delay={postDelay}></span>
+  <span class="w-2 h-8 bg-(--c_white) ml-1 animate-blink"></span>
+</div>
+
+<script>
+  import { $dict } from '../store/languageStore';
+
+  function initTypewriter() {
+    const textElement = document.querySelector('#typewriter-text');
+    const dataElement = document.querySelector('#typewriter-data');
+    if (!textElement || !dataElement) return;
+
+    const keys = JSON.parse((dataElement as HTMLElement).dataset.postKeys || '[]');
+    const speed = parseInt((dataElement as HTMLElement).dataset.postSpeed || '100');
+    const delay = parseInt((dataElement as HTMLElement).dataset.postDelay || '2000');
+
+    let currentKeyIndex = 0;
+    let currentCharIndex = 0;
+    let timeout: ReturnType<typeof setTimeout> | null = null;
+
+    function type() {
+      if (timeout) clearTimeout(timeout);
+
+      const dict = $dict.get();
+      // @ts-ignore
+      const currentFullText = dict[keys[currentKeyIndex]] || "";
+    
+      textElement!.textContent = currentFullText.substring(0, currentCharIndex);
+
+      
+      if (currentCharIndex >= currentFullText.length) {
+        timeout = setTimeout(() => erase(), delay);
+        return; 
+      }
+
+      currentCharIndex++;
+      timeout = setTimeout(type, speed);
+    }
+
+    function erase() {
+      if (timeout) clearTimeout(timeout);
+
+      const dict = $dict.get();
+      // @ts-ignore
+      const currentFullText = dict[keys[currentKeyIndex]] || "";
+
+      textElement!.textContent = currentFullText.substring(0, currentCharIndex);
+
+      if (currentCharIndex <= 0) {
+        currentKeyIndex = (currentKeyIndex + 1) % keys.length;
+        timeout = setTimeout(type, 500);
+        return;
+      }
+
+      currentCharIndex--;
+      timeout = setTimeout(erase, speed / 2);
+    }
+
+
+    type();
+  }
+
+  document.addEventListener('astro:page-load', initTypewriter);
+</script>

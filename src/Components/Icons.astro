@@ -1,17 +1,15 @@
 ---
 export const IconMap = {
-  Home:         'icon-[mdi--home]',
-  AboutMe:      'icon-[ix--about-filled]',
-  Education:    'icon-[mdi--school]',
-  Projects:     'icon-[ix--project]',
-  Achievements: 'icon-[grommet-icons--achievement]',
-  Experience:   'icon-[material-symbols--work]',
-  Contact:      'icon-[bxs--contact]',
-  Language:     'icon-[material-symbols--language]',
-
   Venezuela:    'icon-[game-icons--venezuela]',
   MapPoint:     'icon-[zmdi--pin]',
-  Pin:          'icon-[entypo--pin]',
+
+  Home:         'icon-[mdi--home]',
+  Terminal:     'icon-[solar--code-square-bold]',
+  Projects:     'icon-[picon--folders]',
+  Experiencies: 'icon-[mdi--briefcase]',
+  Education:    'icon-[tdesign--education-filled]',
+  Language:     'icon-[material-symbols--language]',
+
 }
 
 interface Props {
@@ -21,4 +19,4 @@ interface Props {
 const { iconCode } = Astro.props as Props;
 ---
 
-<span class={IconMap[iconCode]}/>
+<span class={IconMap[iconCode]} role="img" aria-hidden="true" />

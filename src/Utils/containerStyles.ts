@@ -1,1 +1,0 @@
-export const headerIcons = "flex p-2  border-1.5 border border-(--c_yellow_01) rounded-2xl text-(--c_yellow_01) text-[1.5rem]";

@@ -1,11 +1,6 @@
 ---
 import Icons from './Icons.astro';
-import { headerIcons } from './../Utils/containerStyles.ts';
 ---
-
-<button id="lang-button" class={`${headerIcons} cursor-pointer`}>
-  <Icons iconCode="Language" />
-</button>
 
 <script>
   import { currentLang } from '../store/languageStore';
