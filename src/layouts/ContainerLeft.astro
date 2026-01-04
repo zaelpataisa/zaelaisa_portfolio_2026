@@ -3,50 +3,75 @@
 import Icons from "../Components/Icons.astro"
 import LanguagePicker from "../Components/LanguagePicker.astro"
 import Typewriter from "../Components/Typewriter.astro"
+import { externalLinks } from "../store/externalLinkStore"
 import { $dict, constLanguages } from '../store/languageStore.ts'
 const dict = $dict.get()
 
-const containerStyle    = "flex flex-col justify-center items-start w-fit h-full space-y-2"
+// Estilos
+const containerStyle    = "flex flex-row justify-between items-center w-full h-full space-x-4 p-10"
+const subContainerStyle = "flex flex-col space-y-2 w-fit"
+const buttonStyle       = "text-(--c_principal) text-[2rem] px-2 pt-2 border border-(--c_principal) rounded-2xl cursor-pointer bg-(--c_principal)/25 hover:text-(--c_black_03) hover:bg-(--c_principal)"
 
-const buttonStyle       = "text-(--c_white) text-[2rem] px-2 pt-2 border border-(--c_white) rounded-2xl cursor-pointer"
+const linksContainer    = "flex flex-row justify-center items-center h-auto w-full space-x-10 p-2"
+const linksButtonStyle  = "text-(--c_white) text-[2rem] px-2 pt-2 border-b border-(--c_white) rounded-2xl cursor-pointer shadow-[0px_20px_10px_0px_rgba(255,_255,_255,_0.05)] bg-(--c_white)/10 hover:text-(--c_black_03) hover:bg-(--c_white)"
 
 ---
 
-<div class={`${containerStyle} ml-10`}>
-  <p class={`font-bold font-rFont text-[3rem] text-(--c_principal) mb-10`}>
-    {constLanguages.cLeft_name01}
-  </p>
+<!-- Title Section -->
+<div class={containerStyle}>
+  <!-- My Info -->
+  <div class={subContainerStyle}>
+    <p class={`font-bold font-rFont text-[2.5rem] text-(--c_principal)`}>
+      {constLanguages.cLeft_name01}
+    </p>
 
-  <Typewriter 
-    postKeys={['cLeft_myTitle01', 'cLeft_myTitle02', 'cLeft_myTitle03']}
-    postSpeed={100}
-    postDelay={2000}
-  />
+    <Typewriter 
+      postKeys={['cLeft_myTitle01', 'cLeft_myTitle02', 'cLeft_myTitle03']}
+      postSpeed={100}
+      postDelay={2000}
+    />
 
-  <p class={`font-bold font-iFont text-[2.5rem] text-(--c_principal)`}>
-    <Icons iconCode="MapPoint" />
-    <Icons iconCode="Venezuela" />
-    <span class="vzla-gradient" data-i18n="cLeft_venezuela">
-      {dict.cLeft_venezuela}
-    </span>
-  </p>
+    <p class={`font-bold font-iFont text-[1.75rem] text-(--c_principal)`}>
+      <Icons iconCode="MapPoint" />
+      <Icons iconCode="Venezuela" />
+      <span class="vzla-gradient" data-i18n="cLeft_venezuela">
+        {dict.cLeft_venezuela}
+      </span>
+    </p>
+  </div>
+  
+  <!-- Scroll Buttons -->
+  <div class={`${subContainerStyle} hidden lg:flex`}>
+      <a href="javascript:void(0)" title={dict.cLeft_title01} class={buttonStyle} data-i18n-title="cLeft_title01">
+      <Icons iconCode="Terminal" />
+    </a>
+    <a href="javascript:void(0)" title={dict.cLeft_title02} class={buttonStyle} data-i18n-title="cLeft_title02">
+      <Icons iconCode="Projects" />
+    </a>
+    <a href="javascript:void(0)" title={dict.cLeft_title03} class={buttonStyle} data-i18n-title="cLeft_title03">
+      <Icons iconCode="Experiencies" />
+    </a>
+    <a href="javascript:void(0)" title={dict.cLeft_title04} class={buttonStyle} data-i18n-title="cLeft_title04">
+      <Icons iconCode="Education" />
+    </a>
+    <LanguagePicker />
+    <button id="lang-button" title={dict.cLeft_title05} class={buttonStyle} data-i18n-title="cLeft_title05">
+      <Icons iconCode="Language" />
+    </button>
+  </div>
 </div>
-<div class={`${containerStyle}`}>
-  <a href="javascript:void(0)" title={dict.cLeft_title01} class={buttonStyle} data-i18n-title="cLeft_title01">
-    <Icons iconCode="Terminal" />
-  </a>
-  <a href="javascript:void(0)" title={dict.cLeft_title02} class={buttonStyle} data-i18n-title="cLeft_title02">
-    <Icons iconCode="Projects" />
-  </a>
-  <a href="javascript:void(0)" title={dict.cLeft_title03} class={buttonStyle} data-i18n-title="cLeft_title03">
-    <Icons iconCode="Experiencies" />
-  </a>
-  <a href="javascript:void(0)" title={dict.cLeft_title04} class={buttonStyle} data-i18n-title="cLeft_title04">
-    <Icons iconCode="Education" />
-  </a>
-  <LanguagePicker />
-  <button id="lang-button" title={dict.cLeft_title05} class={buttonStyle} data-i18n-title="cLeft_title05">
-    <Icons iconCode="Language" />
-  </button>
-</div>
 
+<!-- External Links -->
+<div class={linksContainer}>
+  {externalLinks.data.map((link) => ( 
+    <a 
+      href={link.link} 
+      class={linksButtonStyle}
+      title={link.text} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+    >
+      <Icons iconCode={link.icon} />
+    </a>
+  ))}
+</div>

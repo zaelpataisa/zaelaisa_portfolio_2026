@@ -1,19 +1,8 @@
 ---
-export const IconMap = {
-  Venezuela:    'icon-[game-icons--venezuela]',
-  MapPoint:     'icon-[zmdi--pin]',
-
-  Home:         'icon-[mdi--home]',
-  Terminal:     'icon-[solar--code-square-bold]',
-  Projects:     'icon-[picon--folders]',
-  Experiencies: 'icon-[mdi--briefcase]',
-  Education:    'icon-[tdesign--education-filled]',
-  Language:     'icon-[material-symbols--language]',
-
-}
+import { IconMap, type IconCode } from '../store/icons';
 
 interface Props {
-  iconCode: keyof typeof IconMap;
+  iconCode: IconCode;
 }
 
 const { iconCode } = Astro.props as Props;

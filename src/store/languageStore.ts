@@ -5,7 +5,7 @@ export const languages = {
     // Títulos de página
     cLeft_title01:        "Tecnologías",
     cLeft_title02:        "Proyectos",
-    cLeft_title03:        "Experiencias",
+    cLeft_title03:        "Experiencias Laborales",
     cLeft_title04:        "Educación",
     cLeft_title05:        "Cambiar idioma: Español",
 
@@ -18,7 +18,7 @@ export const languages = {
     // Views titles
     cLeft_title01:        "Technologies",
     cLeft_title02:        "Projects",
-    cLeft_title03:        "Experience",
+    cLeft_title03:        "Work Experience",
     cLeft_title04:        "Education",
     cLeft_title05:        "Change Langauge: English",
 

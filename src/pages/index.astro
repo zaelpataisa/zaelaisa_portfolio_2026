@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import ContainerLeft from "../layouts/ContainerLeft.astro"
+import Technologies from "./Technologies.astro"
 
 // Estilos
-const containerPrincipal  = "flex flex-row w-full min-h-dvh"
-const containerLeftStyle  = "flex flex-row justify-between w-[40%] min-h-full p-4"
-const containerRightSyle  = "flex w-[60%]"
+const containerPrincipal  = "flex flex-col justify-start items-start lg:flex-row w-full"
+const containerLeftStyle  = "lg:fixed flex flex-col justify-center items-center min-h-[100dvh] w-full lg:w-3/8 opacity-100"
+const containerRightSyle  = "lg:absolute flex flex-col h-auto w-full lg:w-5/8 bg-[var(--colors-01)]/75 right-0"
 
 ---
 
@@ -20,7 +21,8 @@ const containerRightSyle  = "flex w-[60%]"
 
     <!-- Lado derecho -->
     <div class={containerRightSyle}>
-
+      <!-- Falta el resumen -->
+      <Technologies />
     </div>
   </div>
 </Layout>
