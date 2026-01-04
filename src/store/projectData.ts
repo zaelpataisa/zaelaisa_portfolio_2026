@@ -1,11 +1,5 @@
-import { educationPlaces, type EducationData } from "./educationData"
-
-const categories = {
-  Web:            'W',
-  Robotics:       'R',
-  XR:             'XR',
-  Systems:        'S'
-} 
+import { educationPlaces } from "./educationData"
+import { categories } from "./technologiesData"
 
 export const projectsData = {
   project01: {
@@ -18,10 +12,9 @@ export const projectsData = {
     title_es:         'Sistema de Gestión Inmobiliaria',
     description_en:   `Thesis project. "${educationPlaces.education01.title}". It features an administrative platform for comprehensive real estate sales management. The system centralizes the control of residential and commercial properties, client profiles, user administration, and asset locations through optimized CRUD operations.`,
     description_es:   `Proyecto de Grado. "${educationPlaces.education01.title}". Implementación de una plataforma administrativa para la gestión integral de ventas inmobiliarias. El sistema centraliza el control de propiedades residenciales y comerciales, perfiles de clientes, usuarios y ubicaciones mediante operaciones CRUD optimizadas.`,
-    
   },
   project02: {
-    category:         categories.Systems,
+    category:         categories.Software,
     month:            '10',
     year:             '2023',
     tech:             ['Java', 'MySQL'],
@@ -76,7 +69,7 @@ export const projectsData = {
     description_es:   'Serie de soluciones de automatización del hogar desarrolladas con diversas funcionalidades integradas, que abarcan: [1] Monitoreo avanzado con sensores de movimiento, gas y temperatura. [2] Control de acceso e iluminación inteligente mediante sistemas activados por movimiento y cerraduras electrónicas. [3] Gestión integral de seguridad y ambiente que integra detección de movimiento, acceso inteligente, monitoreo térmico y sistemas de iluminación automatizados.',
   },
   project07: {
-    category:         categories.Systems,
+    category:         categories.Software,
     month:            '04',
     year:             '2025',
     tech:             ['Java'],

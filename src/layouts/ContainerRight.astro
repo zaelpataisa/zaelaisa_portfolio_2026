@@ -1,0 +1,25 @@
+---
+
+interface Props {
+  containerId:          string;
+  containerTitle:       string;
+}
+
+const { containerId, containerTitle } = Astro.props as Props;
+
+// Estilos
+const containerStyles           = "min-h-dvh w-full space-y-4 p-10";
+const subContainerStyles        = "flex h-auto min-w-full";
+const containerTitles           = "font-bold font-rFont text-[2.5rem] text-(--c_principal)";
+---
+
+<div id={containerId} class={containerStyles}>
+  <div class={subContainerStyles}>
+    <p class={containerTitles} data-i18n={containerTitle}>
+      {containerTitle}
+    </p>
+  </div>
+
+  <slot />
+
+</div>     

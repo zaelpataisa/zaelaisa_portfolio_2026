@@ -1,17 +1,47 @@
 ---
-import { generalContainerStyles } from '../Utils/generalContainerStyles.ts'
+import { categories, technologiesData } from '../store/technologiesData';
+import Icons from '../Components/Icons.astro';
+
+// Función de lenguaje
+import { $dict } from '../store/languageStore.ts'
+const dict = $dict.get()
+
+// Estilos
+const principalContainer    = "grid grid-cols-1 md:grid-cols-2 gap-8"
+const sectionsContainer     = "flex flex-col justify-start items-center p-2 rounded-xl bg-(--c_white)/25 shadow-(--shadow-white) space-y-2"
+const sectionsTitle         = "font-bold font-mFont text-[1.5rem] text-(--c_principal) pb-4"
+const sectionsIcons         = "flex flex-row flex-wrap justify-center items-start text-[3rem] space-x-6 space-y-6 px-6 text-(--c_white) pb-4 w-full"
+
 ---
 
-<div id="container-2" class={generalContainerStyles.containerStyles}>
-  <div class={generalContainerStyles.subContainerStyles}>
-    <p class={generalContainerStyles.containerTitles}>
-      Tecnologías
-    </p>
-  </div>
 
-  <div class={generalContainerStyles.subContainerStyles}>
-    <p class="font-bold font-rFont text-[2rem] text-(--c_white)">
-      Tecnologías
-    </p>
-  </div>
+<div class={principalContainer}>
+  {
+    Object.entries(categories).map(([keyC, valueC]) => (
+      <div 
+        id={`container-tech-${keyC}`}
+        class={sectionsContainer}
+      >
+        <p 
+          class={sectionsTitle}
+          data-i18n={`category_${keyC}`}
+        >
+          {dict[`category_${keyC}` as keyof typeof dict]}
+        </p>
+        <div 
+          class={sectionsIcons}
+        >
+          {
+            Object.entries(technologiesData).map(([keyT, valueT]) => {
+              if (valueT.category === valueC) {
+                return (
+                  <Icons iconCode={valueT.name as any} />
+                )
+              }
+            })
+          }
+        </div>
+      </div>
+    ))
+  }
 </div>

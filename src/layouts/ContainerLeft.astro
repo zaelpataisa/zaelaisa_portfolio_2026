@@ -4,6 +4,8 @@ import Icons from "../Components/Icons.astro"
 import LanguagePicker from "../Components/LanguagePicker.astro"
 import Typewriter from "../Components/Typewriter.astro"
 import { externalLinks } from "../store/externalLinkStore"
+
+// Función de lenguaje
 import { $dict, constLanguages } from '../store/languageStore.ts'
 const dict = $dict.get()
 
@@ -13,7 +15,7 @@ const subContainerStyle = "flex flex-col space-y-2 w-fit"
 const buttonStyle       = "text-(--c_principal) text-[2rem] px-2 pt-2 border border-(--c_principal) rounded-2xl cursor-pointer bg-(--c_principal)/25 hover:text-(--c_black_03) hover:bg-(--c_principal)"
 
 const linksContainer    = "flex flex-row justify-center items-center h-auto w-full space-x-10 p-2"
-const linksButtonStyle  = "text-(--c_white) text-[2rem] px-2 pt-2 border-b border-(--c_white) rounded-2xl cursor-pointer shadow-[0px_20px_10px_0px_rgba(255,_255,_255,_0.05)] bg-(--c_white)/10 hover:text-(--c_black_03) hover:bg-(--c_white)"
+const linksButtonStyle  = "text-(--c_white) text-[2rem] px-2 pt-2 border-b border-(--c_white) rounded-2xl cursor-pointer shadow-(--shadow-white) bg-(--c_white)/10 hover:text-(--c_black_03) hover:bg-(--c_white)"
 
 ---
 
@@ -54,10 +56,7 @@ const linksButtonStyle  = "text-(--c_white) text-[2rem] px-2 pt-2 border-b borde
     <a href="javascript:void(0)" title={dict.cLeft_title04} class={buttonStyle} data-i18n-title="cLeft_title04">
       <Icons iconCode="Education" />
     </a>
-    <LanguagePicker />
-    <button id="lang-button" title={dict.cLeft_title05} class={buttonStyle} data-i18n-title="cLeft_title05">
-      <Icons iconCode="Language" />
-    </button>
+    
   </div>
 </div>
 
@@ -74,4 +73,9 @@ const linksButtonStyle  = "text-(--c_white) text-[2rem] px-2 pt-2 border-b borde
       <Icons iconCode={link.icon} />
     </a>
   ))}
+
+  <LanguagePicker />
+    <button id="lang-button" title={dict.cLeft_title05} class={linksButtonStyle} data-i18n-title="cLeft_title05">
+      <Icons iconCode="Language" />
+    </button>
 </div>

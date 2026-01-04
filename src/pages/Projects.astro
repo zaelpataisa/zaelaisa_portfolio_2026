@@ -1,0 +1,58 @@
+---
+import { projectsData } from '../store/projectData';
+import { categories } from '../store/technologiesData';
+import { $dict } from '../store/languageStore.ts'
+
+const dict = $dict.get()
+
+// Estilos
+const principalContainer    = "grid grid-cols-1 lg:grid-cols-2 gap-8"
+const filterButtonContainer = "flex flex-row flex-wrap justify-center items-center gap-4 pb-8"
+const filterButton          = "filter-btn px-4 py-2 rounded-full bg-(--c_principal)/25 text-(--c_white) font-bold cursor-pointer hover:bg-(--c_principal)/80 transition-colors duration-300"
+
+const projectContainer      = "project-card border border-(--c_white) rounded-xl bg-(--c_white)/35 p-2 transition-all duration-500"
+const titleContainer        = "flex justify-start items-center border-b border-b-(--c_white) pb-1"
+const titleProject          = "font-bold font-rFont text-(--c_white)"
+const descriptionProject    = "font-mFont text-[1rem]"
+---
+
+<div class={filterButtonContainer}>
+  <button class={`${filterButton} active-filter`} data-category="all">
+    {dict['project_filter_all' as keyof typeof dict]}
+  </button>
+  {
+    Object.entries(categories).map(([keyC, valueC]) => (
+      <button class={filterButton} data-category={valueC}>
+        {dict[`category_${keyC}` as keyof typeof dict]}
+      </button>
+    ))
+  }
+</div>
+
+<div class={principalContainer} id="projects-grid">
+  {
+    Object.entries(projectsData).map(([key, value]) => (
+      <div 
+        class={projectContainer}
+        data-category={value.category}
+      >
+        <div class={titleContainer}>
+          <p class={titleProject}>
+            {value.title_es}
+          </p>
+        </div>
+        <div class="p-2">
+          <p class={descriptionProject}>
+            {value.description_es}
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  import { initProjectFilters } from '../Utils/projectFilters';
+
+  document.addEventListener('astro:page-load', initProjectFilters);
+</script>

@@ -9,10 +9,22 @@ export const languages = {
     cLeft_title04:        "Educación",
     cLeft_title05:        "Cambiar idioma: Español",
 
+    // Información
     cLeft_myTitle01:      "Desarrollador Web Backend",
     cLeft_myTitle02:      "Programador en Robótica",
     cLeft_myTitle03:      "Desarrollador XR",
     cLeft_venezuela:      "¡De Venezuela para el mundo!",
+
+    // Projects
+    project_title:        "Proyectos",
+    project_filter_all:   "Todo",
+
+    // Categorias
+    technologies_title:   "Tecnologías",
+    category_Web:         "Desarrollo Web",
+    category_Robotics:    "Robótica",
+    category_XR:          "Realidad Inmersiva",
+    category_Software:    "Software",
   },
   en: {
     // Views titles
@@ -22,10 +34,22 @@ export const languages = {
     cLeft_title04:        "Education",
     cLeft_title05:        "Change Langauge: English",
 
+    // My Info
     cLeft_myTitle01:      "Backend Web Developer",
     cLeft_myTitle02:      "Robotics Software Engineer",
     cLeft_myTitle03:      "XR Developer",
     cLeft_venezuela:      "From Venezuela to the World!",
+
+    // Projects
+    project_title:        "Projects",
+    project_filter_all:   "All",
+
+    // Categories
+    technologies_title:   "Technologies",
+    category_Web:         "Web Development",
+    category_Robotics:    "Robotics",
+    category_XR:          "XR Development",
+    category_Software:    "Software",
   }
 }
 

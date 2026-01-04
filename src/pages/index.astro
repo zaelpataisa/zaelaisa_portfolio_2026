@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro"
 import ContainerLeft from "../layouts/ContainerLeft.astro"
 import Technologies from "./Technologies.astro"
+import Projects from "./Projects.astro"
+import ContainerRight from "../layouts/ContainerRight.astro"
 
 // Estilos
 const containerPrincipal  = "flex flex-col justify-start items-start lg:flex-row w-full"
@@ -22,7 +24,22 @@ const containerRightSyle  = "lg:absolute flex flex-col h-auto w-full lg:w-5/8 bg
     <!-- Lado derecho -->
     <div class={containerRightSyle}>
       <!-- Falta el resumen -->
-      <Technologies />
+      
+      <!-- Proyectos -->
+      <ContainerRight
+        containerId         = "container-1"
+        containerTitle      = "project_title"
+      >
+        <Projects />
+      </ContainerRight>/
+
+      <!-- Tecnologías -->
+      <ContainerRight
+        containerId         = "container-2"
+        containerTitle      = "technologies_title"
+      >
+        <Technologies />
+      </ContainerRight>/
     </div>
   </div>
 </Layout>
