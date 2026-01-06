@@ -1,4 +1,5 @@
 import { atom, computed } from "nanostores";
+import { projectsData } from "./projectData";
 
 export const languages = {
   es: {
@@ -18,6 +19,31 @@ export const languages = {
     // Projects
     project_title:        "Proyectos",
     project_filter_all:   "Todo",
+    project_date:         "Fecha",
+    project01_title:      projectsData.project01.title_es,     
+    project01_desc:       projectsData.project01.description_es,
+    project02_title:      projectsData.project02.title_es,     
+    project02_desc:       projectsData.project02.description_es,
+    project03_title:      projectsData.project03.title_es,     
+    project03_desc:       projectsData.project03.description_es,
+    project04_title:      projectsData.project04.title_es,     
+    project04_desc:       projectsData.project04.description_es,
+    project05_title:      projectsData.project05.title_es,     
+    project05_desc:       projectsData.project05.description_es,
+    project06_title:      projectsData.project06.title_es,     
+    project06_desc:       projectsData.project06.description_es,
+    project07_title:      projectsData.project07.title_es,     
+    project07_desc:       projectsData.project07.description_es,
+    project08_title:      projectsData.project08.title_es,     
+    project08_desc:       projectsData.project08.description_es,
+    project09_title:      projectsData.project09.title_es,     
+    project09_desc:       projectsData.project09.description_es,
+    project10_title:      projectsData.project10.title_es,     
+    project10_desc:       projectsData.project10.description_es,
+    project11_title:      projectsData.project11.title_es,     
+    project11_desc:       projectsData.project11.description_es,
+    project12_title:      projectsData.project12.title_es,     
+    project12_desc:       projectsData.project12.description_es,
 
     // Categorias
     technologies_title:   "Tecnologías",
@@ -43,6 +69,31 @@ export const languages = {
     // Projects
     project_title:        "Projects",
     project_filter_all:   "All",
+    project_date:         "Date",
+    project01_title:      projectsData.project01.title_en,     
+    project01_desc:       projectsData.project01.description_en,
+    project02_title:      projectsData.project02.title_en,     
+    project02_desc:       projectsData.project02.description_en,
+    project03_title:      projectsData.project03.title_en,     
+    project03_desc:       projectsData.project03.description_en,
+    project04_title:      projectsData.project04.title_en,     
+    project04_desc:       projectsData.project04.description_en,
+    project05_title:      projectsData.project05.title_en,     
+    project05_desc:       projectsData.project05.description_en,
+    project06_title:      projectsData.project06.title_en,     
+    project06_desc:       projectsData.project06.description_en,
+    project07_title:      projectsData.project07.title_en,     
+    project07_desc:       projectsData.project07.description_en,
+    project08_title:      projectsData.project08.title_en,     
+    project08_desc:       projectsData.project08.description_en,
+    project09_title:      projectsData.project09.title_en,     
+    project09_desc:       projectsData.project09.description_en,
+    project10_title:      projectsData.project10.title_en,     
+    project10_desc:       projectsData.project10.description_en,
+    project11_title:      projectsData.project11.title_en,     
+    project11_desc:       projectsData.project11.description_en,
+    project12_title:      projectsData.project12.title_en,     
+    project12_desc:       projectsData.project12.description_en,
 
     // Categories
     technologies_title:   "Technologies",

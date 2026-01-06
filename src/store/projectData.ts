@@ -12,6 +12,7 @@ export const projectsData = {
     title_es:         'Sistema de Gestión Inmobiliaria',
     description_en:   `Thesis project. "${educationPlaces.education01.title}". It features an administrative platform for comprehensive real estate sales management. The system centralizes the control of residential and commercial properties, client profiles, user administration, and asset locations through optimized CRUD operations.`,
     description_es:   `Proyecto de Grado. "${educationPlaces.education01.title}". Implementación de una plataforma administrativa para la gestión integral de ventas inmobiliarias. El sistema centraliza el control de propiedades residenciales y comerciales, perfiles de clientes, usuarios y ubicaciones mediante operaciones CRUD optimizadas.`,
+    image:            'project_01.webp',
   },
   project02: {
     category:         categories.Software,
@@ -23,6 +24,7 @@ export const projectsData = {
     title_es:         'Sistema de Billetera Digital y Recompensas',
     description_en:   'Desktop application developed for FarmaSoluciones Pharmacy in San Francisco, Zulia. The system implements a token-based loyalty program, allowing customers to accumulate points through purchases that can later be redeemed for products within the establishment.',
     description_es:   'Aplicación de escritorio desarrollada para la farmacia FarmaSoluciones en San Francisco, Zulia. El sistema implementa un programa de lealtad basado en tokens, permitiendo a los clientes acumular puntos por sus compras para ser canjeados posteriormente por artículos dentro del establecimiento.',
+    image:            'project_02.webp',
   },
   project03: {
     category:         categories.XR,
@@ -34,6 +36,7 @@ export const projectsData = {
     title_es:         'El Petróleo y la Lemna en la Cuenca del Lago de Maracaibo',
     description_en:   'Immersive VR project developed in Unity 3D designed to raise awareness about the environmental pollution crisis affecting Lake Maracaibo since the early 2000s. The experience utilizes virtual reality to visualize the ecological impact of oil spills and duckweed (lemna) proliferation on the local ecosystem.',
     description_es:   'Proyecto de realidad virtual inmersiva desarrollado en Unity 3D diseñado para crear conciencia sobre la crisis de contaminación ambiental que afecta al Lago de Maracaibo desde principios de la década de 2000. La experiencia utiliza VR para visualizar el impacto ecológico de los derrames petroleros y la proliferación de lemna en el ecosistema local.',
+    image:            'project_03.webp',
   },
   project04: {
     category:         categories.XR,
@@ -45,6 +48,7 @@ export const projectsData = {
     title_es:         'Isla de Providencia: Una Experiencia de Patrimonio Virtual',
     description_en:   'Historical reconstruction project developed in Unity 3D-VR, designed to showcase the evolution of the Venezuelan island from ancient times to the present day. The experience leverages virtual reality to preserve and narrate the island’s historical and cultural heritage through immersive digital storytelling.',
     description_es:   'Proyecto de reconstrucción histórica desarrollado en Unity 3D-VR, diseñado para exponer la evolución de la isla venezolana desde la antigüedad hasta la actualidad. La experiencia utiliza la realidad virtual para preservar y narrar el patrimonio histórico y cultural de la isla mediante una narrativa digital inmersiva.',
+    image:            'project_04.webp',
   },
   project05: {
     category:         categories.Web,
@@ -56,6 +60,7 @@ export const projectsData = {
     title_es:         'Portal Web Cuenta Cuentos',
     description_en:   'Web platform designed for the "First University Storytelling Festival" at Jose Gregorio Hernandez University. The system was developed to showcase and preserve the literary works produced by Education students during the festival. Additionally, the project serves as a digital tribute to Professor Aida Lopez, honoring her distinguished teaching career and her impact on multiple generations of students nationwide.',
     description_es:   'Plataforma web diseñada para el "Primer Festival de Cuentos Universitarios" de la Universidad José Gregorio Hernández. El sistema fue desarrollado para presentar y resguardar la producción literaria de los estudiantes de la carrera de Educación durante el festival. Asimismo, el proyecto funciona como un homenaje digital a la maestra Aida López, reconociendo su distinguida trayectoria docente y su impacto en diversas generaciones de estudiantes del país.',
+    image:            'project_05.webp',
   },
   project06: {
     category:         categories.Robotics,
@@ -67,6 +72,7 @@ export const projectsData = {
     title_es:         'Sistemas Domóticos',
     description_en:   'A series of home automation solutions developed with various integrated functionalities, including: [1] Advanced monitoring with motion, gas, and temperature sensors. [2] Smart access and lighting control featuring motion-activated systems and intelligent door locks. [3] Comprehensive environmental and security management integrating motion sensing, smart door access, temperature monitoring, and automated lighting systems.',
     description_es:   'Serie de soluciones de automatización del hogar desarrolladas con diversas funcionalidades integradas, que abarcan: [1] Monitoreo avanzado con sensores de movimiento, gas y temperatura. [2] Control de acceso e iluminación inteligente mediante sistemas activados por movimiento y cerraduras electrónicas. [3] Gestión integral de seguridad y ambiente que integra detección de movimiento, acceso inteligente, monitoreo térmico y sistemas de iluminación automatizados.',
+    image:            'project_06.webp',
   },
   project07: {
     category:         categories.Software,
@@ -78,6 +84,7 @@ export const projectsData = {
     title_es:         'Analizador Semántico basado en Java',
     description_en:   'A semantic analysis system developed in Java designed to recognize and interpret a custom pseudocode syntax. The project implements core compiler theory principles, including token verification, scope management, and semantic rule enforcement to ensure the logical integrity of the interpreted code.',
     description_es:   'Sistema de análisis semántico desarrollado en Java, diseñado para reconocer e interpretar una sintaxis de pseudocódigo personalizada. El proyecto implementa principios fundamentales de la teoría de compiladores, incluyendo la verificación de tokens, gestión de ámbitos y el cumplimiento de reglas semánticas para garantizar la integridad lógica del código interpretado.',
+    image:            'project_07.webp',
   },
   project08: {
     category:         categories.Web,
@@ -89,6 +96,7 @@ export const projectsData = {
     title_es:         'CLO - Página de Presentación Corporativa',
     description_en:   'Professional landing page developed for "Comercializadora la Occidental" (CLO). The project focuses on establishing a strong digital presence through a modern, responsive interface designed to showcase the company’s portfolio, corporate values, and service offerings to the public and potential partners.',
     description_es:   'Página de aterrizaje profesional desarrollada para Comercializadora la Occidental" El proyecto se centra en establecer una presencia digital sólida mediante una interfaz moderna y adaptativa, diseñada para exponer el portafolio, los valores corporativos y la oferta de servicios de la empresa ante el público y socios potenciales.',
+    image:            'project_08.webp',
   },
   project09: {
     category:         categories.Web,
@@ -99,7 +107,8 @@ export const projectsData = {
     title_en:         '',
     title_es:         'CLO - Cátalogo Online de Artíuclos',
     description_en:   '',
-    description_es:   'Página para la muestra del catálogo de articulos de Comercializadora la Occidental, con funciones personalizadas a los vendedores de la empresa.'
+    description_es:   'Página para la muestra del catálogo de articulos de Comercializadora la Occidental, con funciones personalizadas a los vendedores de la empresa.',
+    image:            'project_09.webp',
   },
   project10: {
     category:         categories.XR,
@@ -111,6 +120,7 @@ export const projectsData = {
     title_es:         'LearnArms VR: Educación Robótica Inmersiva',
     description_en:   `Thesis project. ${educationPlaces.education02.title}. An immersive virtual reality system designed for the Meta Quest 2, focused on teaching the fundamental principles of robotics. The project features a simulated virtual environment specifically tailored for middle and high school students (ages 12-17), leveraging gamification and interactive learning to bridge the gap in technical education.`,
     description_es:   `Trabajo Especial de Titulación. ${educationPlaces.education02.title}". Sistema de realidad virtual inmersiva diseñado para el dispositivo Meta Quest 2, centrado en la enseñanza de los principios fundamentales de la robótica. El proyecto presenta un entorno virtual simulado específicamente adaptado para estudiantes de educación media (12-17 años), utilizando la gamificación y el aprendizaje interactivo para fortalecer la formación técnica.`,
+    image:            'project_10.webp',
   },
   project11: {
     category:         categories.Web,
@@ -122,6 +132,7 @@ export const projectsData = {
     title_es:         'CLO - Catálogo de Artículos Online',
     description_en:   'Digital catalog platform developed for "Comercializadora la Occidental" designed to showcase the company’s extensive inventory. The system features a specialized interface for the sales team, incorporating custom tools for product management, real-time availability checks, and optimized workflows to enhance the sales process.',
     description_es:   'Plataforma de catálogo digital desarrollada para Comercializadora la Occidental, diseñada para exponer el extenso inventario de la empresa. El sistema cuenta con una interfaz especializada para el equipo de ventas, incorporando herramientas personalizadas para la gestión de productos, consulta de disponibilidad en tiempo real y flujos de trabajo optimizados para potenciar el proceso comercial.',
+    image:            'project_11.webp',
   },
   project12: {
     category:         categories.Web,
@@ -133,6 +144,7 @@ export const projectsData = {
     title_es:         'CLO - API REST Privada Empresarial V1.0',
     description_en:   'A secure and robust backend infrastructure developed to manage sensitive corporate data for "Comercializadora la Occidental." This private API serves as the core communication layer between the company’s internal databases and its digital ecosystem, implementing strict security protocols to ensure data integrity and controlled access to enterprise resources.',
     description_es:   'Infraestructura de backend robusta y segura desarrollada para gestionar los datos sensibles de Comercializadora la Occidental. Esta API privada actúa como la capa de comunicación central entre las bases de datos internas y el ecosistema digital de la empresa, implementando estrictos protocolos de seguridad para garantizar la integridad de los datos y el acceso controlado a los recursos empresariales.',
+    image:            'project_12.webp',
   },
 }
 

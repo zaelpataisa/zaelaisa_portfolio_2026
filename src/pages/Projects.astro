@@ -1,19 +1,27 @@
 ---
+import Icons from "../Components/Icons.astro"
 import { projectsData } from '../store/projectData';
 import { categories } from '../store/technologiesData';
-import { $dict } from '../store/languageStore.ts'
 
+// Función de lenguaje
+import { $dict } from '../store/languageStore.ts'
 const dict = $dict.get()
 
 // Estilos
-const principalContainer    = "grid grid-cols-1 lg:grid-cols-2 gap-8"
+const principalContainer    = "grid grid-cols-2 gap-8"
 const filterButtonContainer = "flex flex-row flex-wrap justify-center items-center gap-4 pb-8"
 const filterButton          = "filter-btn px-4 py-2 rounded-full bg-(--c_principal)/25 text-(--c_white) font-bold cursor-pointer hover:bg-(--c_principal)/80 transition-colors duration-300"
 
-const projectContainer      = "project-card border border-(--c_white) rounded-xl bg-(--c_white)/35 p-2 transition-all duration-500"
-const titleContainer        = "flex justify-start items-center border-b border-b-(--c_white) pb-1"
-const titleProject          = "font-bold font-rFont text-(--c_white)"
-const descriptionProject    = "font-mFont text-[1rem]"
+const projectContainer      = "project-card rounded-xl bg-(--c_white)/35 p-2 transition-all duration-500 text-justify shadow-xl"
+const titleContainer        = "flex flex-col justify-center items-start border-b border-b-(--c_principal) pb-1"
+const titleProject          = "font-bold font-rFont text-(--c_principal)"
+const descriptionProject    = "font-mFont text-[1rem] text-(--c_white)"
+
+const imageContainer        = "flex h-auto w-full justify-center items-center py-2"
+const imageStyle            = "w-full h-auto rounded-xl shadow-xl bg-transparent grayscale hover:grayscale-0"
+
+const techContainer         = "flex flex-row flex-wrap justify-center items-center w-full h-auto px-2 space-x-4 mt-2"
+const techPin               = "border-2 border-(--c_principal) rounded-2xl text-[2rem] text-(--c_principal) px-2 py-1"
 ---
 
 <div class={filterButtonContainer}>
@@ -36,15 +44,34 @@ const descriptionProject    = "font-mFont text-[1rem]"
         class={projectContainer}
         data-category={value.category}
       >
+        <div class={imageContainer}>
+          <img 
+            src={`/images/projects/${value.image}`} 
+            alt={value.image}
+            class={imageStyle}
+          />
+        </div>
         <div class={titleContainer}>
+          <p class={titleProject} data-i18n={`${key}_title`}>
+            {`${key}_title`}
+          </p>
           <p class={titleProject}>
-            {value.title_es}
+            <span data-i18n={'project_date'}></span>:
+            <span class="font-normal">{`${value.month}/${value.year}`}</span>
           </p>
         </div>
         <div class="p-2">
-          <p class={descriptionProject}>
-            {value.description_es}
+          <p class={descriptionProject} data-i18n={`${key}_desc`}>
+            {`${key}_desc`}
           </p>
+        </div>
+        <div class={techContainer}> 
+          {value.tech.map((techKey) => (
+            <span class={techPin}>
+              {/* {techKey} */}
+              <Icons iconCode={techKey as any} />
+            </span>
+          ))}
         </div>
       </div>
     ))
