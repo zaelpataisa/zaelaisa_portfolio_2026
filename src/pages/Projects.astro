@@ -25,12 +25,20 @@ const techPin               = "border-2 border-(--c_principal) rounded-2xl text-
 ---
 
 <div class={filterButtonContainer}>
-  <button class={`${filterButton} active-filter`} data-category="all">
+  <button 
+    class={`${filterButton} active-filter`} 
+    data-category="all" 
+    data-i18n="project_filter_all"
+  >
     {dict['project_filter_all' as keyof typeof dict]}
   </button>
   {
     Object.entries(categories).map(([keyC, valueC]) => (
-      <button class={filterButton} data-category={valueC}>
+      <button 
+        class={filterButton} 
+        data-category={valueC}
+        data-i18n={`category_${keyC}`}
+      >
         {dict[`category_${keyC}` as keyof typeof dict]}
       </button>
     ))

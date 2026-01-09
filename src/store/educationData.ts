@@ -48,10 +48,6 @@ export const acknowledgmentsData = {
     place:        educationPlaces.education02.title,
     image:        'ujgh_20250621.jpg',
   },
-  acknowledgment08: {
-    place:        educationPlaces.education02.title,
-    image:        '',
-  },
 }
 
 export const coursesData = {

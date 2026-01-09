@@ -1,5 +1,6 @@
 import { atom, computed } from "nanostores";
 import { projectsData } from "./projectData";
+import { worksData, payProjectsData } from "./experiencesData";
 
 export const languages = {
   es: {
@@ -44,6 +45,27 @@ export const languages = {
     project11_desc:       projectsData.project11.description_es,
     project12_title:      projectsData.project12.title_es,     
     project12_desc:       projectsData.project12.description_es,
+
+    // Experiences
+    experiences_title:    "Experiencias",
+    experiences_title01:  "Experiencias laborales",
+    experiences_title02:  "Proyectos Independientes",
+    experiencie_role:     "Cargo",
+    exp_work01_role:       worksData.work01.role_es,
+    exp_work01_desc:       worksData.work01.description_es,
+    exp_work02_role:       worksData.work02.role_es,
+    exp_work02_desc:       worksData.work02.description_es,
+    exp_work03_role:       worksData.work03.role_es,
+    exp_work03_desc:       worksData.work03.description_es,
+    exp_project01_role:    payProjectsData.project01.role_es,
+    exp_project01_desc:    payProjectsData.project01.description_es,
+    exp_project02_role:    payProjectsData.project02.role_es,
+    exp_project02_desc:    payProjectsData.project02.description_es,
+    exp_project03_role:    payProjectsData.project03.role_es,
+    exp_project03_desc:    payProjectsData.project03.description_es,
+
+    // Education
+    education_title:      "Educación",
 
     // Categorias
     technologies_title:   "Tecnologías",
@@ -94,6 +116,27 @@ export const languages = {
     project11_desc:       projectsData.project11.description_en,
     project12_title:      projectsData.project12.title_en,     
     project12_desc:       projectsData.project12.description_en,
+
+    // Experiences
+    experiences_title:    "Experiences",
+    experiences_title01:  "Work Experience",
+    experiences_title02:  "Independent Projects",
+    experiencie_role:     "Role",
+    exp_work01_role:       worksData.work01.role_en,
+    exp_work01_desc:       worksData.work01.description_en,
+    exp_work02_role:       worksData.work02.role_en,
+    exp_work02_desc:       worksData.work02.description_en,
+    exp_work03_role:       worksData.work03.role_en,
+    exp_work03_desc:       worksData.work03.description_en,
+    exp_project01_role:    payProjectsData.project01.role_en,
+    exp_project01_desc:    payProjectsData.project01.description_en,
+    exp_project02_role:    payProjectsData.project02.role_en,
+    exp_project02_desc:    payProjectsData.project02.description_en,
+    exp_project03_role:    payProjectsData.project03.role_en,
+    exp_project03_desc:    payProjectsData.project03.description_en,
+
+    // Education
+    education_title:      "Education",
 
     // Categories
     technologies_title:   "Technologies",

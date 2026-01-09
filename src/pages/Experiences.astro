@@ -1,0 +1,109 @@
+---
+import { worksData, payProjectsData } from '../store/experiencesData';
+
+// Función de lenguaje
+import { $dict } from '../store/languageStore.ts'
+const dict = $dict.get()
+
+// Estilos
+const principalContainer            = "flex flex-col space-y-2 w-full"
+
+const sectionTitle                  = "font-bold font-rFont text-(--c_white) text-[2rem]"
+const titleProject                  = "font-bold font-rFont text-(--c_principal) text-[1.15rem]"
+
+const experienceContainer           = "flex flex-col p-2 rounded-xl bg-(--c_white)/35 p-2 transition-all duration-500 text-justify shadow-xl mb-4"
+const experienceTitleContainer      = "flex justify-start items-center w-full border-2 border-transparent border-b-(--c_principal) py-1"
+const experienceContentContainer    = "flex items-start h-full w-full pt-4"
+const contentImageContainer         = "flex justify-center items-center h-full w-1/4"
+const contentImage                  = "w-40 h-auto"
+const contentInfoContainer          = "flex flex-col justify-start items-start h-full w-3/4"
+
+const descriptionProject            = "font-mFont text-[1rem] text-(--c_white) italic py-2"
+
+---
+
+<div class={principalContainer}>
+  <p class={sectionTitle} data-i18n="experiences_title01">
+    {dict.experiences_title01}
+  </p>
+  {Object.entries(worksData).map(([key, value]) => (
+    <div
+      id={key}
+      class={experienceContainer}
+    >
+      {/* Title */}
+      <div class={experienceTitleContainer}>
+        <p class={titleProject}>
+          {value.title}
+        </p>
+      </div>
+
+      {/* Content */}
+      <div class={experienceContentContainer}>
+        <div class={contentImageContainer}>
+          <img 
+            src={`images/experiences/${value.logo}`}
+            alt={value.title} 
+            class={contentImage}
+          />
+        </div>
+
+        <div class={contentInfoContainer}>
+          <p class={titleProject}>
+            <span data-i18n={'experiencie_role'}></span>:
+            <span data-i18n={`exp_${key}_role`}></span>
+          </p>
+          <p class={titleProject}>
+            <span data-i18n={'project_date'}></span>:
+            <span>{`${value.year}`}</span>
+          </p>
+          <p class={descriptionProject}>
+            <span data-i18n={`exp_${key}_desc`}></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+  
+  <p class={sectionTitle} data-i18n="experiences_title02">
+    {dict.experiences_title02}
+  </p>
+  {Object.entries(payProjectsData).map(([key, value]) => (
+    <div
+      id={key}
+      class={experienceContainer}
+    >
+      {/* Title */}
+      <div class={experienceTitleContainer}>
+        <p class={titleProject}>
+          {value.title}
+        </p>
+      </div>
+
+      {/* Content */}
+      <div class={experienceContentContainer}>
+        <div class={contentImageContainer}>
+          <img 
+            src={`images/experiences/${value.logo}`}
+            alt={value.title} 
+            class={contentImage}
+          />
+        </div>
+
+        <div class={contentInfoContainer}>
+          <p class={titleProject}>
+            <span data-i18n={'experiencie_role'}></span>:
+            <span data-i18n={`exp_${key}_role`}></span>
+          </p>
+          <p class={titleProject}>
+            <span data-i18n={'project_date'}></span>:
+            <span>{`${value.year}`}</span>
+          </p>
+          <p class={descriptionProject}>
+            <span data-i18n={`exp_${key}_desc`}></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
