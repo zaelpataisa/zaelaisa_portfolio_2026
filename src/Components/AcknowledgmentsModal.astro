@@ -16,36 +16,33 @@ const firstImage = filteredImages.length > 0 ? filteredImages[0].image : '';
 
 // Estilos
 const modalContainer                = "ack-modal fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-md flex justify-center items-center p-4"
-
 const closeModalButton              = "close-modal absolute top-6 right-8 text-white text-5xl hover:text-(--c_principal) cursor-pointer z-[110]"
 const prevModalButton               = "prev-btn absolute left-4 md:left-10 text-white text-6xl hover:text-(--c_principal) cursor-pointer z-[110] select-none"
 const nextModalButton               = "next-btn absolute right-4 md:right-10 text-white text-6xl hover:text-(--c_principal) cursor-pointer z-[110] select-none"
-
 const contentModalContainer         = "relative max-w-4xl w-full flex flex-col items-center"
-const contentModalImageContainer    = "w-full flex justify-center"
-const contentModalImage             = "modal-img max-h-[80vh] w-auto rounded-xl shadow-2xl border border-white/10 object-contain transition-opacity duration-300 opacity-100"
+const contentModalImageContainer    = "w-full flex justify-center relative min-h-[400px]"
+const contentModalImage             = "modal-img max-h-[80vh] w-auto rounded-xl shadow-2xl border border-white/10 object-contain transition-opacity duration-300"
 const contentModalImageIterator     = "carousel-counter text-white/60 font-mFont mt-4 text-sm tracking-widest uppercase"
 ---
 
 {filteredImages.length > 0 && (
-  <div 
-    id={modalId} 
-    class={modalContainer}
-  >
-    <button class={closeModalButton}>
-      &times;
-    </button>
+  <div id={modalId} class={modalContainer}>
+    <button class={closeModalButton}>&times;</button>
     
     <button class={prevModalButton}>&lsaquo;</button>
     <button class={nextModalButton}>&rsaquo;</button>
 
     <div class={contentModalContainer}>
       <div class={contentModalImageContainer}>
+        <div class="modal-loader absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+           <div class="w-12 h-12 border-4 border-white/20 border-t-(--c_principal) rounded-full animate-spin"></div>
+        </div>
+
         <img 
-          class={contentModalImage}
-          src={`images/acknowledgments/${firstImage}`} 
+          class={`${contentModalImage} opacity-100`}
+          src={`/images/acknowledgments/${firstImage}`} 
           data-images={JSON.stringify(filteredImages.map(img => img.image))}
-          alt=""
+          alt="Reconocimiento"
         />
       </div>
       <p class={contentModalImageIterator}>
@@ -59,16 +56,26 @@ const contentModalImageIterator     = "carousel-counter text-white/60 font-mFont
   function setupCarousel(modal: HTMLElement) {
     const img = modal.querySelector('.modal-img') as HTMLImageElement;
     const counter = modal.querySelector('.carousel-counter');
+    const loader = modal.querySelector('.modal-loader') as HTMLElement;
     const images = JSON.parse(img.dataset.images || '[]');
     let currentIndex = 0;
 
+    // Se dispara cuando la nueva imagen termina de cargar en el navegador
+    img.onload = () => {
+      img.style.opacity = '1';
+      if (loader) loader.style.opacity = '0';
+    };
+
     const updateView = () => {
+      // Iniciamos transición de salida e indicamos carga
       img.style.opacity = '0';
+      if (loader) loader.style.opacity = '1';
+      
+      // Esperamos a que la imagen previa sea invisible antes de cambiar el src
       setTimeout(() => {
-        img.src = `images/acknowledgments/${images[currentIndex]}`;
+        img.src = `/images/acknowledgments/${images[currentIndex]}`;
         if (counter) counter.textContent = `${currentIndex + 1} / ${images.length}`;
-        img.style.opacity = '1';
-      }, 150);
+      }, 300); 
     };
 
     modal.querySelector('.next-btn')?.addEventListener('click', (e) => {
@@ -87,19 +94,20 @@ const contentModalImageIterator     = "carousel-counter text-white/60 font-mFont
       modal.classList.add('hidden');
       document.body.style.overflow = 'auto';
       currentIndex = 0;
-      img.src = `images/acknowledgments/${images[0]}`;
+      // Resetear a la primera imagen al cerrar
+      img.src = `/images/acknowledgments/${images[0]}`;
       if (counter) counter.textContent = `1 / ${images.length}`;
     };
 
     modal.querySelector('.close-modal')?.addEventListener('click', close);
     modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
-    
-    // Soporte teclado
+
+    // Navegación por teclado
     window.addEventListener('keydown', (e) => {
       if (modal.classList.contains('hidden')) return;
       if (e.key === 'Escape') close();
-      if (e.key === 'ArrowRight') modal.querySelector<HTMLButtonElement>('.next-btn')?.click();
-      if (e.key === 'ArrowLeft') modal.querySelector<HTMLButtonElement>('.prev-btn')?.click();
+      if (e.key === 'ArrowRight') (modal.querySelector('.next-btn') as HTMLButtonElement)?.click();
+      if (e.key === 'ArrowLeft') (modal.querySelector('.prev-btn') as HTMLButtonElement)?.click();
     });
   }
 

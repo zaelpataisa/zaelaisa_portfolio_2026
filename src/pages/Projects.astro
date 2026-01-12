@@ -8,14 +8,14 @@ import { $dict } from '../store/languageStore.ts'
 const dict = $dict.get()
 
 // Estilos
-const principalContainer    = "grid grid-cols-2 gap-8"
+const principalContainer    = "grid grid-cols-1 md:grid-cols-2 gap-8"
 const filterButtonContainer = "flex flex-row flex-wrap justify-center items-center gap-4 pb-8"
 const filterButton          = "filter-btn px-4 py-2 rounded-full bg-(--c_principal)/25 text-(--c_white) font-bold cursor-pointer hover:bg-(--c_principal)/80 transition-colors duration-300"
 
 const projectContainer      = "project-card rounded-xl bg-(--c_white)/35 p-2 transition-all duration-500 text-justify shadow-xl"
 const titleContainer        = "flex flex-col justify-center items-start border-b border-b-(--c_principal) pb-1"
 const titleProject          = "font-bold font-rFont text-(--c_principal)"
-const descriptionProject    = "font-mFont text-[1rem] text-(--c_white)"
+const descriptionProject    = "font-mFont text-[0.75rem] md:text-[1rem] text-(--c_white)"
 
 const imageContainer        = "flex h-auto w-full justify-center items-center py-2"
 const imageStyle            = "w-full h-auto rounded-xl shadow-xl bg-transparent grayscale hover:grayscale-0"
