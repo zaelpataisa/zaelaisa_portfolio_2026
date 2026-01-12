@@ -8,14 +8,15 @@ export const IconMap = {
   LinkedIn:     'icon-[mdi--linkedin]',
   Instagram:    'icon-[mdi--instagram]',
   Email:        'icon-[mdi--email]',
+  Language:     'icon-[material-symbols--language]',
+  Download:     'icon-[material-symbols--download]',
 
   // Sections
   Home:         'icon-[mdi--home]',
-  Terminal:     'icon-[solar--code-square-bold]',
+  Technologies:     'icon-[solar--code-square-bold]',
   Projects:     'icon-[material-symbols--folder]',
   Experiencies: 'icon-[gridicons--briefcase]',
   Education:    'icon-[tdesign--education-filled]',
-  Language:     'icon-[material-symbols--language]',
 
   // Tecnologies
   // --- Web

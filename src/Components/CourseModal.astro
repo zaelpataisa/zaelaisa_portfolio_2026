@@ -1,0 +1,41 @@
+---
+interface Props {
+  modalId: string;
+  image: string;
+}
+
+const { modalId, image } = Astro.props;
+
+// Estilos
+const courseContainer           = "course-modal fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex justify-center items-center p-4"
+const courseButton              = "absolute top-6 right-8 text-white text-5xl hover:text-(--c_principal) cursor-pointer z-[110]"
+const courseImageContainer      = "relative max-w-5xl w-full flex justify-center"
+const courseImage               = "max-h-[90vh] w-auto rounded-lg shadow-2xl border border-white/20 object-contain"
+---
+
+<div id={modalId} class={courseContainer}>
+  <button 
+    class={courseButton}
+    onclick={`document.getElementById('${modalId}').classList.add('hidden'); document.body.style.overflow='auto';`}
+  >
+    &times;
+  </button>
+
+  <div 
+    class={courseImageContainer} 
+    onclick="event.stopPropagation()"
+  >
+    <img 
+      src={`/images/courses/${image}`} 
+      alt={image} 
+      class={courseImage}
+    />
+  </div>
+</div>
+
+<script is:inline define:vars={{ modalId }}>
+  document.getElementById(modalId)?.addEventListener('click', () => {
+    document.getElementById(modalId).classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  });
+</script>

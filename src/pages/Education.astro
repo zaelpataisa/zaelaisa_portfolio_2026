@@ -1,13 +1,111 @@
 ---
+import { educationPlaces, acknowledgmentsData, coursesData } from '../store/educationData'
+import AcknowledgmentsModal from '../Components/AcknowledgmentsModal.astro';
+import CourseModal from '../Components/CourseModal.astro';
 
-// Función de lenguaje
 import { $dict } from '../store/languageStore.ts'
 const dict = $dict.get()
 
+const placesWithAwards = Object.values(acknowledgmentsData).map(ack => ack.place);
+
 // Estilos
 const principalContainer            = "flex flex-col space-y-2 w-full"
+const sectionTitle                  = "font-bold font-rFont text-(--c_white) text-[2rem]"
+const educationContainer            = "flex flex-col p-2 rounded-xl bg-(--c_white)/35 transition-all duration-500 text-justify shadow-xl mb-4"
+const educationTitleContainer       = "flex justify-start items-center w-full border-2 border-transparent border-b-(--c_principal) py-1"
+const titleEducation                = "font-rFont text-(--c_principal) text-[1.15rem]"
+const fontboldTitle                 = "font-bold"
+const educationContentContainer     = "flex items-start h-full w-full p-4"
+const contentInfoContainer          = "flex flex-col justify-start items-start h-full w-3/4"
+const contentImageContainer         = "flex justify-center items-center h-full w-1/4"
+const contentImage                  = "w-40 h-auto"
+const acknowledgmentsButton         = "ack-btn font-rFont font-bold text-(--c_principal) bg-(--c_yellow_02) border border-(--c_principal) rounded-2xl my-2 py-2 px-4 hover:bg-(--c_principal) hover:text-(--c_black) cursor-pointer transition-all"
+
+const coursesContainer              = "grid grid-cols-1 md:grid-cols-3 gap-4 w-full"
+const coursesContentContainer       = "group relative flex flex-col justify-center items-center p-4 rounded-xl bg-(--c_white)/35 border border-transparent hover:border-(--c_principal) transition-all duration-300 cursor-pointer shadow-lg"
+const coursesImage                  = "w-full h-auto rounded-lg shadow-md group-hover:scale-[1.02] transition-transform duration-300"
+const coursesInfoContainer          = "mt-3 text-center"
+const coursesInfo                   = "font-rFont text-(--c_principal) font-bold text-sm leading-tight"
+const coursesInfoDate               = "text-(--c_white) text-xs mt-1 opacity-70"
 ---
 
 <div class={principalContainer}>
-  holi
+  <p class={sectionTitle} data-i18n="education_title01"></p>
+
+  {Object.entries(educationPlaces).map(([key, value]) => {
+    const hasAwards = placesWithAwards.includes(value.title);
+    const modalId = `modal-${value.title.replace(/\s+/g, '-').toLowerCase()}`;
+
+    return (
+      <div id={key} class={educationContainer}>
+        <div class={educationTitleContainer}>
+          <p class={titleEducation}>
+            {value.title}
+          </p>
+        </div>
+
+        <div class={educationContentContainer}>
+          <div class={contentInfoContainer}>
+            <p class={titleEducation}>
+              <span class={fontboldTitle} data-i18n={'education_degree'}></span>:
+              <span data-i18n={`edu_${key}_d`}></span>
+            </p>
+            <p class={titleEducation}>
+              <span class={fontboldTitle} data-i18n={'education_period'}></span>:
+              <span>{`${value.date_start}/${value.date_final}`}</span>
+            </p>
+            
+            {hasAwards && (
+              <>
+                <button 
+                  class={acknowledgmentsButton}
+                  data-i18n={"education_akwnow"}
+                  onclick={`document.getElementById('${modalId}').classList.remove('hidden'); document.body.style.overflow='hidden';`}
+                >
+                  {dict['education_akwnow' as keyof typeof dict]}
+                </button>
+                
+                <AcknowledgmentsModal place={value.title} />
+              </>
+            )}
+          </div>
+
+          <div class={contentImageContainer}>
+            <img src={`images/education/${value.image}`} alt={value.title} class={contentImage} />
+          </div>
+        </div>
+      </div>
+    )
+  })}  
+  
+  <p class={sectionTitle} data-i18n="education_title02"></p>
+  <div class={coursesContainer}>
+    {Object.entries(coursesData).map(([key, value]) => {
+      const courseModalId = `modal-course-${key}`;
+      return (
+        <>
+          <div 
+            id={key}
+            class={coursesContentContainer}
+            onclick={`document.getElementById('${courseModalId}').classList.remove('hidden'); document.body.style.overflow='hidden';`}
+          >
+            <img 
+              src={`images/courses/${value.image}`} 
+              alt={value.image} 
+              class={coursesImage}
+            />
+            <div class={coursesInfoContainer}>
+              <p 
+                class={coursesInfo}
+                data-i18n={`cour_${key}_t`}
+              ></p>
+              <p class={coursesInfoDate}>{value.month}/{value.year}</p>
+            </div>
+          </div>
+
+          <CourseModal modalId={courseModalId} image={value.image} />
+        </>
+      )
+    })}
+  </div>
 </div>

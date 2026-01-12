@@ -26,6 +26,10 @@
   --shadow-white: 0px 20px 10px 0px rgba(255, 255, 255, 0.05);
 }
 
+* {
+  user-select: none;
+}
+
 body {
   background: var(--c_black_01);
   color: var(--cf_white);

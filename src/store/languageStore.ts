@@ -1,6 +1,7 @@
 import { atom, computed } from "nanostores";
 import { projectsData } from "./projectData";
 import { worksData, payProjectsData } from "./experiencesData";
+import { coursesData, educationPlaces } from "./educationData";
 
 export const languages = {
   es: {
@@ -11,11 +12,18 @@ export const languages = {
     cLeft_title04:        "Educación",
     cLeft_title05:        "Cambiar idioma: Español",
 
+    // CV Button
+    cv_url:               'curriculum_vitae/cv_es_eliaszapata_2026.pdf',
+    cv_title:             'Descargar CV',
+
     // Información
     cLeft_myTitle01:      "Desarrollador Web Backend",
     cLeft_myTitle02:      "Programador en Robótica",
     cLeft_myTitle03:      "Desarrollador XR",
     cLeft_venezuela:      "¡De Venezuela para el mundo!",
+
+    // Resume
+    resume_title:         "Resumen",
 
     // Projects
     project_title:        "Proyectos",
@@ -66,6 +74,16 @@ export const languages = {
 
     // Education
     education_title:      "Educación",
+    education_title01:    "Formación Académica",
+    education_title02:    "Cursos Relevantes",
+    education_degree:     "Títulación",
+    education_period:     "Periodo",
+    edu_education01_d:    educationPlaces.education01.degree_es,
+    edu_education02_d:    educationPlaces.education02.degree_es,
+    education_akwnow:     "Reconocimientos",
+    cour_course01_t:      coursesData.course01.title_es,
+    cour_course02_t:      coursesData.course02.title_es,
+    cour_course03_t:      coursesData.course03.title_es,
 
     // Categorias
     technologies_title:   "Tecnologías",
@@ -82,11 +100,18 @@ export const languages = {
     cLeft_title04:        "Education",
     cLeft_title05:        "Change Langauge: English",
 
+    // CV Button
+    cv_url:               'curriculum_vitae/cv_en_eliaszapata_2026.pdf',
+    cv_title:             'Download CV',
+
     // My Info
     cLeft_myTitle01:      "Backend Web Developer",
     cLeft_myTitle02:      "Robotics Software Engineer",
     cLeft_myTitle03:      "XR Developer",
     cLeft_venezuela:      "From Venezuela to the World!",
+
+    // Resume
+    resume_title:         "Resume",
 
     // Projects
     project_title:        "Projects",
@@ -137,6 +162,16 @@ export const languages = {
 
     // Education
     education_title:      "Education",
+    education_title01:    "Academic Background",
+    education_title02:    "Relevant Courses",
+    education_degree:     "Degree",
+    education_period:     "Period",
+    edu_education01_d:    educationPlaces.education01.degree_en,
+    edu_education02_d:    educationPlaces.education02.degree_en,
+    education_akwnow:     "Acknowledgments",
+    cour_course01_t:      coursesData.course01.title_en,
+    cour_course02_t:      coursesData.course02.title_en,
+    cour_course03_t:      coursesData.course03.title_en,
 
     // Categories
     technologies_title:   "Technologies",

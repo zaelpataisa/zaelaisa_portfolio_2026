@@ -44,11 +44,11 @@ const linksButtonStyle  = "text-(--c_white) text-[2rem] px-2 pt-2 border-b borde
   
   <!-- Scroll Buttons -->
   <div class={`${subContainerStyle} hidden lg:flex`}>
-      <a href="javascript:void(0)" title={dict.cLeft_title01} class={buttonStyle} data-i18n-title="cLeft_title01">
-      <Icons iconCode="Terminal" />
-    </a>
     <a href="javascript:void(0)" title={dict.cLeft_title02} class={buttonStyle} data-i18n-title="cLeft_title02">
       <Icons iconCode="Projects" />
+    </a>
+    <a href="javascript:void(0)" title={dict.cLeft_title01} class={buttonStyle} data-i18n-title="cLeft_title01">
+      <Icons iconCode="Technologies" />
     </a>
     <a href="javascript:void(0)" title={dict.cLeft_title03} class={buttonStyle} data-i18n-title="cLeft_title03">
       <Icons iconCode="Experiencies" />
@@ -73,14 +73,42 @@ const linksButtonStyle  = "text-(--c_white) text-[2rem] px-2 pt-2 border-b borde
       <Icons iconCode={link.icon} />
     </a>
   ))}
+  
+  <a 
+    id="cv-download"
+    href={dict.cv_url} 
+    download 
+    class={linksButtonStyle} 
+    title={dict.cv_title}
+    data-i18n-title="cv_title"
+  >
+    <Icons iconCode="Download" />
+  </a>
 
   <LanguagePicker />
-    <button 
-      id="lang-button" 
-      title={dict.cLeft_title05} 
-      class={linksButtonStyle} 
-      data-i18n-title="cLeft_title05"
-    >
-      <Icons iconCode="Language" />
-    </button>
+  <button 
+    id="lang-button" 
+    title={dict.cLeft_title05} 
+    class={linksButtonStyle} 
+    data-i18n-title="cLeft_title05"
+  >
+    <Icons iconCode="Language" />
+  </button>
 </div>
+
+<script>
+  import { $dict } from '../store/languageStore.ts';
+
+  function updateCVLink() {
+    const cvLink = document.getElementById('cv-download') as HTMLAnchorElement;
+    if (cvLink) {
+      const dict = $dict.get();
+      cvLink.href = dict.cv_url;
+      cvLink.title = dict.cv_title;
+    }
+  }
+
+  $dict.subscribe(() => {
+    updateCVLink();
+  });
+</script>

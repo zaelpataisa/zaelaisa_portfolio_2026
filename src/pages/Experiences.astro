@@ -9,7 +9,8 @@ const dict = $dict.get()
 const principalContainer            = "flex flex-col space-y-2 w-full"
 
 const sectionTitle                  = "font-bold font-rFont text-(--c_white) text-[2rem]"
-const titleProject                  = "font-bold font-rFont text-(--c_principal) text-[1.15rem]"
+const titleProject                  = "font-rFont text-(--c_principal) text-[1.15rem]"
+const fontboldTitle                 = "font-bold"
 
 const experienceContainer           = "flex flex-col p-2 rounded-xl bg-(--c_white)/35 p-2 transition-all duration-500 text-justify shadow-xl mb-4"
 const experienceTitleContainer      = "flex justify-start items-center w-full border-2 border-transparent border-b-(--c_principal) py-1"
@@ -33,7 +34,7 @@ const descriptionProject            = "font-mFont text-[1rem] text-(--c_white) i
     >
       {/* Title */}
       <div class={experienceTitleContainer}>
-        <p class={titleProject}>
+        <p class={`${titleProject} ${fontboldTitle}`}>
           {value.title}
         </p>
       </div>
@@ -50,11 +51,11 @@ const descriptionProject            = "font-mFont text-[1rem] text-(--c_white) i
 
         <div class={contentInfoContainer}>
           <p class={titleProject}>
-            <span data-i18n={'experiencie_role'}></span>:
+            <span class={fontboldTitle} data-i18n={'experiencie_role'}></span>:
             <span data-i18n={`exp_${key}_role`}></span>
           </p>
           <p class={titleProject}>
-            <span data-i18n={'project_date'}></span>:
+            <span class={fontboldTitle} data-i18n={'project_date'}></span>:
             <span>{`${value.year}`}</span>
           </p>
           <p class={descriptionProject}>
@@ -75,7 +76,7 @@ const descriptionProject            = "font-mFont text-[1rem] text-(--c_white) i
     >
       {/* Title */}
       <div class={experienceTitleContainer}>
-        <p class={titleProject}>
+        <p class={`${titleProject} ${fontboldTitle}`}>
           {value.title}
         </p>
       </div>
@@ -92,11 +93,11 @@ const descriptionProject            = "font-mFont text-[1rem] text-(--c_white) i
 
         <div class={contentInfoContainer}>
           <p class={titleProject}>
-            <span data-i18n={'experiencie_role'}></span>:
+            <span class={fontboldTitle} data-i18n={'experiencie_role'}></span>:
             <span data-i18n={`exp_${key}_role`}></span>
           </p>
           <p class={titleProject}>
-            <span data-i18n={'project_date'}></span>:
+            <span class={fontboldTitle} data-i18n={'project_date'}></span>:
             <span>{`${value.year}`}</span>
           </p>
           <p class={descriptionProject}>

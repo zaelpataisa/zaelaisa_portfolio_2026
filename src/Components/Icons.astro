@@ -8,4 +8,4 @@ interface Props {
 const { iconCode } = Astro.props as Props;
 ---
 
-<span class={IconMap[iconCode]} role="img" aria-hidden="true" />
+<span class={IconMap[iconCode]} role="img" aria-hidden="true" data-icon={iconCode} />

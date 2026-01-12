@@ -1,0 +1,39 @@
+---
+
+---
+
+<script>
+  function initSmoothScroll() {
+    const scrollLinks = document.querySelectorAll('a[href="javascript:void(0)"]');
+    
+    const sectionMap: Record<string, string> = {
+      'Projects':         'container-1', 
+      'Technologies':     'container-2', 
+      'Experiencies':     'container-3', 
+      'Education':        'container-4'  
+    };
+
+    scrollLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const iconElement = link.querySelector('[data-icon]');
+        const iconCode = iconElement?.getAttribute('data-icon');
+        
+        if (iconCode && sectionMap[iconCode]) {
+          const targetId = sectionMap[iconCode];
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initSmoothScroll);
+</script>

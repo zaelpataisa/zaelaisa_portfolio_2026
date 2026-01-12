@@ -48,23 +48,30 @@ export const acknowledgmentsData = {
     place:        educationPlaces.education02.title,
     image:        'ujgh_20250621.jpg',
   },
+  acknowledgment08: {
+    place:        educationPlaces.education02.title,
+    image:        'ujgh_20250913.jpg',
+  },
 }
 
 export const coursesData = {
   course01: {
-    title:        'Aprende a programar con Python (Edición 2020)',
+    title_es:     'Aprende a programar con Python (Edición 2020)',
+    title_en:     'Learn to program with Python (2020 Edition)',
     month:        '08',
     year:         '2022',
     image:        '20220827.jpg'
   },
   course02: {
-    title:        'Concurso Diseño 3D y Biomecánica',
+    title_es:     'Concurso Diseño 3D y Biomecánica',
+    title_en:     '3D Design and Biomechanics Competition',
     month:        '12',
     year:         '2024',
     image:        '20241220.jpg'
   },
   course03: {
-    title:        'Curso de Iniciación al Desarrollo con IA',
+    title_es:     'Curso de Iniciación al Desarrollo con IA',
+    title_en:     'Introduction to AI Development Course',
     month:        '10',
     year:         '2025',
     image:        '20251008.jpg'

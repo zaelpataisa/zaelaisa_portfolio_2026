@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import SmoothScroll from "../Components/SmoothScroll.astro"
+
 import ContainerLeft from "../layouts/ContainerLeft.astro"
 import Technologies from "./Technologies.astro"
 import Projects from "./Projects.astro"
@@ -17,6 +19,7 @@ const containerRightSyle  = "lg:absolute flex flex-col h-auto w-full lg:w-5/8 bg
 <!-- TO-DO: Buscar optimización a nivel de SEO -->
 
 <Layout>
+  <SmoothScroll />
   <div class={containerPrincipal}>
     <!-- Lado izquierdo -->
     <div class={containerLeftStyle}>
@@ -24,9 +27,7 @@ const containerRightSyle  = "lg:absolute flex flex-col h-auto w-full lg:w-5/8 bg
     </div>
 
     <!-- Lado derecho -->
-    <div class={containerRightSyle}>
-      <!-- Falta el resumen -->
-      
+    <div class={containerRightSyle}>      
       <!-- Proyectos -->
       <ContainerRight
         containerId         = "container-1"
@@ -41,7 +42,7 @@ const containerRightSyle  = "lg:absolute flex flex-col h-auto w-full lg:w-5/8 bg
         containerTitle      = "technologies_title"
       >
         <Technologies />
-      </ContainerRight>/
+      </ContainerRight>
 
       <!-- Experiencias -->
       <ContainerRight
